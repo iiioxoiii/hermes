@@ -152,7 +152,7 @@ while 1:
         bodyTemplate = '''{
         "version":"1.0.0",
         "datastreams":[
-                {"id":"1", "current_value":"$temperature"}
+                {"id":"<put--here-your-number-datastream>", "current_value":"$temperature"}
         ]
         }'''
 
@@ -164,9 +164,10 @@ while 1:
 #       aqui es necesario poner la key del usuario que tengais en pachube
 #       y subir los datos a vuestro datastream
 
-        headers={"X-PachubeApiKey":"J5g5W8gLflClYtEA66luoeu6_gSSAKxqWVhDQ2EwWDFscz0g"}
+        headers={"X-PachubeApiKey":"<put--here-your-pachube-KEY>"}
+        
         connection =  httplib.HTTPConnection('api.pachube.com')
-        connection.request('PUT', '/v2/feeds/116210', bodyContent, headers)
+        connection.request('PUT', '/v2/feeds/<your-FEED>', bodyContent, headers)
         response = connection.getresponse()
         print response.status, response.reason
 
@@ -175,7 +176,7 @@ while 1:
         bodyTemplate = '''{
         "version":"1.0.0",
         "datastreams":[
-                {"id":"2", "current_value":"$humidity"}
+                {"id":"<put--here-your-number-datastream>", "current_value":"$humidity"}
         ]
         }'''
 
@@ -187,11 +188,11 @@ while 1:
 #       aqui es necesario poner la key del usuario que tengais en pachube
 #       y subir los datos a vuestro datastream
 
-        headers={"X-PachubeApiKey":"J5g5W8gLflClYtEA66luoeu6_gSSAKxqWVhDQ2EwWDFscz0g"}
+        headers={"X-PachubeApiKey":"<put--here-your-pachube-KEY>"}
 
 
         connection =  httplib.HTTPConnection('api.pachube.com')
-        connection.request('PUT', '/v2/feeds/116210', bodyContent, headers)
+        connection.request('PUT', '/v2/feeds/<your-FEED>', bodyContent, headers)
         response = connection.getresponse()
         print response.status, response.reason
 
