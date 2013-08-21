@@ -1,0 +1,4 @@
+# execucio del sentinella cada minut a /etc/crontab
+# que executa el sentinella.sh
+
+0-59 *  * * *	root 	/home/root/sentinella.sh 
