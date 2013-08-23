@@ -1,8 +1,9 @@
-  GNU nano 2.2.6                          File: temp.plot                                                          
-
-
 set size ratio 0.71
 set terminal postscript enhanced landscape color solid
+#set tmargin at screen 0.9  #top
+#set bmargin at screen 0.1  #bottom
+#set lmargin at screen 0.1  #left
+#set rmargin at screen 0.1  #right
 set output 'exemple.eps'
 
 # set data syle line
@@ -34,14 +35,14 @@ set timefmt "%H:%M:%S"
 set format x "%H:%M:%S"
 set xtics nomirror rotate font "Helvetica,8"
 set ytic 0, 5
+set yrange [0:75]
 
 # set format x controls the way that gnuplot displays the dates on the x axis.
 
-set size ratio -2
+# set size ratio -2
 set grid
 
 
-plot "/var/tmp/lectures.txt" using 3:1 with filledcurve y1=50 title "humitat", "/var/tmp/lectures.txt" using 3:2 w$
-
+plot "/var/tmp/lectures.txt" using 3:1 with filledcurve y1=50 title "humitat", "/var/tmp/lectures.txt" using 3:2 with filledcurve y1=21 title "temperatura", t_max with$
 
 
